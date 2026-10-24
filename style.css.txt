@@ -1,190 +1,214 @@
 
+/* General styling */
 * {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #faf8ff;
-  color: #292440;
-  line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background-color: #f8f6ff;
+    color: #333;
+    line-height: 1.6;
 }
 
+/* Header and profile name */
 header {
-  background: white;
-  padding: 18px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 12px #ddd6f3;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+    background-color: #ffffff;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-header h2 {
-  color: #7451d8;
-  margin: 0;
-  font-size: 24px;
+.profile_name {
+    color: #6c4ce3;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-nav {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
+/* Navigation bar */
+.topmenu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-nav a {
-  color: #38304f;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.2s;
+.topmenu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #7451d8;
-  font-weight: bold;
-  text-decoration: underline;
+/* Required navigation hover effects */
+.topmenu a:hover {
+    color: #6c4ce3;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
+/* Sections */
 section {
-  padding: 55px 8%;
-  scroll-margin-top: 100px;
+    padding: 40px 7%;
+    margin: 20px auto;
+    max-width: 1200px;
 }
 
+section h1,
+section h2 {
+    color: #6c4ce3;
+    margin-bottom: 20px;
+}
+
+/* About Me */
 #about {
-  display: flex;
-  align-items: center;
-  gap: 45px;
-  min-height: 400px;
-  background: linear-gradient(120deg, #f0eaff, #fff3f8);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
 }
 
-#about h1 {
-  color: #7451d8;
-  font-size: 36px;
+.profile_image {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e5ddff;
+    flex-shrink: 0;
 }
 
-#about h3 {
-  color: #a14f91;
+.about_content h1 {
+    margin-bottom: 10px;
 }
 
-.avatar {
-  min-width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: white;
-  display: grid;
-  place-items: center;
-  font-size: 90px;
-  box-shadow: 0 8px 25px #d9ccef;
+.about_content h3 {
+    margin-bottom: 12px;
+    color: #555;
 }
 
-section h1 {
-  color: #7451d8;
-}
-
+/* Skills, projects and recommendations cards */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .cards article {
-  background: white;
-  padding: 22px;
-  border-radius: 15px;
-  box-shadow: 0 5px 18px #e7e0f4;
-  border: 1px solid #eee8fa;
-  transition: transform 0.2s;
+    background-color: #ffffff;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    flex: 1 1 200px;
+    min-width: 0;
+    transition: transform 0.3s ease;
 }
 
 .cards article:hover {
-  transform: translateY(-5px);
+    transform: translateY(-4px);
+}
+
+.cards article h3 {
+    color: #6c4ce3;
+    margin-bottom: 8px;
 }
 
 .logo {
-  width: 55px;
-  height: 55px;
-  border-radius: 12px;
-  background: #eee8ff;
-  color: #7451d8;
-  display: grid;
-  place-items: center;
-  font-size: 25px;
-  font-weight: bold;
+    font-size: 36px;
+    font-weight: bold;
+    color: #6c4ce3;
+    margin-bottom: 10px;
 }
 
-#projects {
-  background: #f1edff;
-}
-
-#recommendations {
-  background: white;
-}
-
-#recommendations h2 {
-  margin-top: 40px;
-}
-
-form {
-  max-width: 550px;
-  display: grid;
-  gap: 15px;
-}
-
-textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #cfc3ee;
-  border-radius: 10px;
-  font: inherit;
-  min-height: 110px;
-}
-
-button {
-  background: #7451d8;
-  color: white;
-  padding: 13px 20px;
-  border: none;
-  border-radius: 9px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  justify-self: start;
-}
-
-button:hover {
-  background: #5937bd;
-}
-
-footer {
-  text-align: center;
-  background: #292440;
-  color: white;
-  padding: 22px;
-}
-
-@media (max-width: 700px) {
-  header {
-    justify-content: center;
-    gap: 15px;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 12px;
-  }
-
-  #about {
+/* Recommendation form */
+#recommendationForm {
+    display: flex;
     flex-direction: column;
-    text-align: center;
-  }
+    gap: 12px;
+    margin-top: 20px;
+}
 
-  #about h1 {
-    font-size: 29px;
-  }
+#recommendationText {
+    width: 100%;
+    max-width: 600px;
+    min-height: 110px;
+    padding: 12px;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#recommendationForm button {
+    background-color: #6c4ce3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: fit-content;
+}
+
+#recommendationForm button:hover {
+    background-color: #5034b5;
+}
+
+/* Home icon */
+.home-icon {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6c4ce3;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.home-icon:hover {
+    background-color: #5034b5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #666;
+    margin-top: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topmenu {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section {
+        padding: 30px 5%;
+    }
 }
